@@ -1,0 +1,74 @@
+h1 {
+    color: red;
+    text-align: center;
+    font-family: "Dancing Script", "Shadows into light", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 64px;
+    padding-bottom: 5%;
+    padding-top: 2%;
+}
+
+body {
+    background-image: url(images/tile.jpg);
+}
+
+header {
+    grid-row: 1;
+    grid-column: 1 / span 4;
+    display: grid;
+    /* flex-direction: column; */
+    gap: 30px;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#task-info::placeholder {
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+#task-form {
+    align-items: center;
+    padding-bottom: 3%;
+    margin: auto;
+    width: fit-content;
+}
+
+#task-info {
+    background-image: url(images/formbg.jpg);
+    text-align: left;
+    padding: 2%;
+}
+
+.tasks-container {
+    background-image: url(images/notebg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    height: 450px;
+    width: 350px;
+    max-height: 400px;
+    color: seagreen;
+    text-shadow: 1px 1px 2px black;
+
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    border: 1px solid black;
+    overflow-y: auto;
+
+    padding-top: 20px;
+    position: absolute;
+}
+
+.tasks-container p {
+    overflow-y: auto;
+    position: relative;
+    
+    margin-top: 40px;
+}
