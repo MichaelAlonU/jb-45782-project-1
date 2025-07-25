@@ -6,15 +6,10 @@ count = existingTasks.length;
 function addTaskToBoard(event) {
     event.preventDefault();
     const data = collectDataFromForm();
-
     const newTask = generateNewTask(data, count);
     count++;
-    // if (count !== 1) {
-    //     const tasksJSON = localStorage.getItem(TASKS_KEY_NAME);
-    //     const tasks = JSON.parse(tasksJSON);
-    //     const eraseFADE = generateTask(tasks[count - 2], count - 2)
-
-    // }
+    document.getElementById("tasks-container").innerHTML = ""; // for erasing fade-in
+    loadTasksFromStorage();  //  from old notes
     injectTaskToDOM(newTask);
     saveTaskToLocalStorage(data);
     clearForm();
