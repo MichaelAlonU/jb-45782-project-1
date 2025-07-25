@@ -4,12 +4,17 @@ const existingTasks = JSON.parse(localStorage.getItem(TASKS_KEY_NAME) || "[]");
 count = existingTasks.length;
 
 function addTaskToBoard(event) {
-    event.preventDefault(); 
+    event.preventDefault();
     const data = collectDataFromForm();
 
-    const newTask = generateTask(data, count);
+    const newTask = generateNewTask(data, count);
     count++;
-    
+    // if (count !== 1) {
+    //     const tasksJSON = localStorage.getItem(TASKS_KEY_NAME);
+    //     const tasks = JSON.parse(tasksJSON);
+    //     const eraseFADE = generateTask(tasks[count - 2], count - 2)
+
+    // }
     injectTaskToDOM(newTask);
     saveTaskToLocalStorage(data);
     clearForm();
@@ -26,17 +31,32 @@ function collectDataFromForm() {
         date,
     };
 }
+function generateNewTask(data, count) {
+    const { task, time, date } = data;
+    const newDIV = `
+                <div class="task-container fade-in">
+                <br><br>
+                <p class="notes-parag">
+                ${task}
+                </p>
+                <button id="buttonX" type="button" class="btn-close" onClick="eraseNote(${count})"></button>
+                <span> ${date} </span>
+                <span> ${time}</span>
+            </div>
+    `;
+    return newDIV;
+}
 function generateTask(data, count) {
-{}
+    const { task, time, date } = data;
     const newDIV = `
                 <div class="task-container">
                 <br><br>
                 <p class="notes-parag">
-                ${data.task}
+                ${task}
                 </p>
                 <button id="buttonX" type="button" class="btn-close" onClick="eraseNote(${count})"></button>
-                <span> ${data.date} </span>
-                <span> ${data.time}</span>
+                <span> ${date} </span>
+                <span> ${time}</span>
             </div>
     `;
     return newDIV;
@@ -64,7 +84,7 @@ function saveTaskToLocalStorage(task) {
 function loadTasksFromStorage() {
     const tasksJSON = localStorage.getItem(TASKS_KEY_NAME);
     if (tasksJSON) {
-    const tasks = JSON.parse(tasksJSON);
+        const tasks = JSON.parse(tasksJSON);
         for (let i = 0; i < tasks.length; i++) {
             const newTask = generateTask(tasks[i], i);
             injectTaskToDOM(newTask);

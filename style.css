@@ -81,8 +81,13 @@ header {
     margin-top: 40px;
     padding-top: 15px;
     position: relative;
-}
 
+}
+.fade-in{
+    opacity: 0;
+    animation: fadeIn 1s ease-in forwards;
+
+}
 
 .task-container p {
     /*     
@@ -99,14 +104,17 @@ header {
     /* padding-bottom: 25px; */
     /* padding-top: 50px; */
 }
-.task-container #buttonX{
+
+.task-container #buttonX {
     display: none;
 }
-.task-container:hover #buttonX{
+
+.task-container:hover #buttonX {
     display: inline-block;
 }
+
 #buttonX {
-    
+
     position: absolute;
     /* z-index: 10; */
     top: 35px;
@@ -115,4 +123,19 @@ header {
     color: white; */
     /* border: none; */
 
+}
+
+/* .fade-in {
+  opacity: 0;
+  animation: fadeIn 1s ease-in forwards;
+} */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
 }
