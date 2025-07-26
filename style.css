@@ -14,8 +14,6 @@ body {
 }
 
 header {
-    grid-row: 1;
-    grid-column: 1 / span 4;
     display: grid;
     gap: 30px;
     align-items: center;
@@ -33,7 +31,6 @@ header {
     align-items: center;
     padding-bottom: 3%;
     margin: auto;
-    width: fit-content;
 }
 
 #task-info {
@@ -41,7 +38,7 @@ header {
     text-align: left;
     padding: 2%;
 }
-
+ 
 #tasks-container {
     color: seagreen;
     text-shadow: 1px 1px 2px black;

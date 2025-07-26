@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -22,21 +20,26 @@
 <body>
     <header>
         <h1> My Tasks Board </h1>
-        <form id="task-form" onsubmit="addTaskToBoard(event)">
-            <textarea id="task-info" required rows="7" cols="75" placeholder="Add another task.."></textarea>
-            <div>
-                <label for="time"> Task completion date   </label>
-                <input type="date" id="date" name="date" >
+        <form id="task-form" onsubmit="addTaskToBoard(event)" class="container my-4">
+            <div class="mb-3">
+                <textarea id="task-info" required rows="7" cols="75" placeholder="Add another task.."></textarea>
+            </div>
+            <div class="row g-2">
+                <div class="col-md-6">
+                    <label for="time" class="form-label"> Task completion date </label>
+                    <input type="date" id="date" name="date" class="form-control" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="time" class="form-label"> Task completion time </label>
+                    <input type="time" id="due-time" name="due-time" class="form-control" required>
+                </div>
 
-                <label for="time"> Task completion time </label>
-                <input type="time" id="due-time" name="due-time">
-                <div>
-                    <button type="reset" class="btn btn-secondary"> Reset the form </button>
-
-                    <button class="btn btn-primary">Add task</button>
+                <div class="d-flex gap-2 col-md-6">
+                        <button type="reset" class="btn btn-secondary w-50"> Reset the form </button>
+                        <button class="btn btn-primary w-50">Add task</button>
                 </div>
             </div>
-        </form>
+            </form>
     </header>
 
 

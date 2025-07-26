@@ -8,8 +8,8 @@ function addTaskToBoard(event) {
     const data = collectDataFromForm();
     const newTask = generateNewTask(data, count);
     count++;
-    document.getElementById("tasks-container").innerHTML = ""; // for erasing fade-in
-    loadTasksFromStorage();  //  from old notes
+    document.getElementById("tasks-container").innerHTML = ""; // for erasing fade-in from old notes 
+    loadTasksFromStorage();  // (not most efficient but with what wev'e learned so far it seems to be the only way to do it)
     injectTaskToDOM(newTask);
     saveTaskToLocalStorage(data);
     clearForm();
